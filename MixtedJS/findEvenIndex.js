@@ -1,11 +1,16 @@
 // The easiest way to solve the index that has equal sum of it left and right
 const findEvenIndex = (arr)=>{
+    // leftSum = 0 because nothing is to the left before we start
     let leftSum = 0;
+    // rightSum = arr.reduce(...) calculates the total sum of the entire array
     let rightSum = arr.reduce((sum, num)=> sum + num, 0);
-
+    // loop through every number(i) as a potential balance point
     for (let i = 0; i<arr.length; i++){
+       // Remove the current number from rightSum because you are standing on it , it belongs to neither side
         rightSum -=arr[i];
 
+        // Check if the left side and right are  now equal 
+        
         if(leftSum === rightSum){
             return i;
         }
