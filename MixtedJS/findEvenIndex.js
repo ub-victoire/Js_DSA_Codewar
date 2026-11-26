@@ -12,7 +12,7 @@ const findEvenIndex = (arr)=>{
         leftSum += arr[i]
     }
 
-    retun -1
+    return -1;
 
 }
 
